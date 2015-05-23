@@ -96,7 +96,7 @@ QString HostsFile::updateHosts(const QString &password)
 
     QStringList update_command;
     update_command << "sh" << "-c"
-                   << "curl -s http://winhelp2002.mvps.org/hosts.txt > /etc/hosts";
+                   << "curl -s https://adaway.org/hosts.txt http://winhelp2002.mvps.org/hosts.txt http://hosts-file.net/ad_servers.asp 'http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext' > /etc/hosts";
     if( !this->sudo(password, update_command) == 0 )
     {
         qCritical() << "can not update /etc/hosts";
